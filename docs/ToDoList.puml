@@ -1,0 +1,48 @@
+@startuml
+
+
+class ToDoList{
+-listTitle: String
+    ' must be min 3 chars
++ToDoList(listTitle: String)
++setTitle(listTitle: String)
++addListItem(itemDescrption: String, dueDate: Date)
++deleteListItem()
++displayAllItems()
++displayIncompleteItems()
++displayCompleteItems()
+}
+
+class ToDoItem{
+-itemDescription
+-dueDate
+    ' formatted YYY-MM-DD
+-complete
++changeDescription(newDescription: String)
++changeDueDate(dueDate: Date)
++markComplete()
+}
+
+class output{
+-Collection selectedLists
+-Path outputLocation
++selectLists()
++saveToFile()
+}
+
+class loadLists{
+
+}
+
+class Application{
+main()
+createNewList(listTitle: String)
+deleteList(listTitle: String)
+}
+
+Application -- ToDoList
+ToDoList -- ToDoItem
+Application -- output
+Application -- loadLists
+
+@enduml
