@@ -23,14 +23,14 @@ class ToDoItem{
 +markComplete()
 }
 
-class output{
+class ListOutput{
 -Collection selectedLists
 -Path outputLocation
 +selectLists()
 +saveToFile()
 }
 
-class loadLists{
+class ListLoader{
 
 }
 
@@ -42,7 +42,7 @@ deleteList(listTitle: String)
 
 Application -- ToDoList
 ToDoList -- ToDoItem
-Application -- output
-Application -- loadLists
+Application -- ListOutput
+Application -- ListLoader
 
 @enduml
