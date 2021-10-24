@@ -41,7 +41,7 @@ deleteList(listTitle: String)
 }
 
 Application -- ToDoList
-ToDoList -- ToDoItem
+ToDoList *-- ToDoItem
 Application -- ListOutput
 Application -- ListLoader
 
